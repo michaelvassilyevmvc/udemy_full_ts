@@ -16,15 +16,18 @@ function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server Sta
 
 startServer('https', 3001);
 
-function createAnimation(id: string | number,
+type AnimationTimingFunc = 'ease' | 'ease-out' | 'ease-in';
+type AnimationID = string | number;
+
+function createAnimation(id: AnimationID,
                          animName: string,
-                         timingFunc: 'ease' | 'ease-out' | 'ease-in' = 'ease',
+                         timingFunc: AnimationTimingFunc = 'ease',
                          duration: number,
                          iterCount: "infinite" | number
 ): void {
   // const elem = document.querySelector(`#${id}`) as HTMLElement;
   // if (elem) {
-    console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
+  console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
   //   elem.style.animation = `${animName} ${timingFunc} ${duration} ${iterCount}`;
   // }
 }

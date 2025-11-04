@@ -1,9 +1,19 @@
-let id: symbol = Symbol('id')
-
-const data = {
-  [id]:1
+const userData = {
+  isBirthdayData: true,
+  ageData: 40,
+  userNameData: "John",
+  messages: {
+    error: "Error"
+  }
 }
 
-console.log(data[id])
+function logBrtMsg({isBirthdayData, userNameData, ageData, messages: {error}}: {
+  isBirthdayData: boolean,
+  userNameData: string,
+  ageData: number,
+  messages: { error: string }
+}): string {
+  return ''
+}
 
-const num1 = 1n;
+logBrtMsg(userData)

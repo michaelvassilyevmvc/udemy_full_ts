@@ -1,18 +1,12 @@
-const currRate = "1.05";
+const test: null = null
 
-const fetchCurr = (response:string):number => {
-  const data: number = JSON.parse(response);
-  return data;
-};
-
-function transferEurToUsd(available: boolean, amount: number, commission:number):void {
-  if (available) {
-    let res:number = fetchCurr(currRate) * amount * commission;
-    console.log(res);
-    // Или запись в элемент на странице вместо консоли
+function getRndData() {
+  if (Math.random() < 0.5) {
+    return null;
   } else {
-    console.log("Сейчас обмен недоступен");
+    return "   Some data   ";
   }
 }
 
-transferEurToUsd(true, 500, 1.05);
+const data = getRndData();
+const trimmedData = data ? data.trim() : null;

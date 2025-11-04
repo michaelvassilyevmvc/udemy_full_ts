@@ -17,3 +17,9 @@ function logBrtMsg({isBirthdayData, userNameData, ageData, messages: {error}}: {
 }
 
 logBrtMsg(userData)
+
+const departments: string[] = ['dev', 'design', 'marketing']
+const nums: number[] = [3, 5, 6]
+
+const report = departments.filter((d: string) => d !== 'dev')
+    .map((d: string) => `${d} - done`)

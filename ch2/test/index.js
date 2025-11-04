@@ -1,5 +1,6 @@
-var msg = 'Hello';
-msg = 'Hello';
+// let msg: 'Hello' = 'Hello'
+//
+// msg = 'Hello';
 var port3000 = 3000;
 var port3001 = 3001;
 function startServer(protocol, port) {

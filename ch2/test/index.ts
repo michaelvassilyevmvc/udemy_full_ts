@@ -1,11 +1,11 @@
-let msg: 'Hello' = 'Hello'
-
-msg = 'Hello'
+// let msg: 'Hello' = 'Hello'
+//
+// msg = 'Hello';
 
 const port3000: number = 3000;
 const port3001: number = 3001;
 
-function startServer(protocol: 'http' | 'https', port: 3000 | 3001): 'Server Started' {
+const startServer: (protocol: 'http' | 'https', port: 3000 | 3001) => string = (protocol: 'http' | 'https', port: 3000 | 3001): 'Server Started' => {
   if (port == port3000 || port == port3001) {
     console.log(`Server started: ${protocol}://server:${port}`);
   } else {

@@ -1,12 +1,9 @@
-const test: null = null
+let id: symbol = Symbol('id')
 
-function getRndData() {
-  if (Math.random() < 0.5) {
-    return null;
-  } else {
-    return "   Some data   ";
-  }
+const data = {
+  [id]:1
 }
 
-const data = getRndData();
-const trimmedData = data ? data.trim() : null;
+console.log(data[id])
+
+const num1 = 1n;

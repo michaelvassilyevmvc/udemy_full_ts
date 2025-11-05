@@ -84,3 +84,5 @@ const styles: Styles = {
   top: '20px',
   left: '50px'
 }
+
+type TestEmpty = number | 'empty'

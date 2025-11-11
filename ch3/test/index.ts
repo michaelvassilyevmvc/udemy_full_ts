@@ -1,21 +1,18 @@
-interface User {
-  readonly login: string;
-  password: string;
-  age: number;
-  addr: string | undefined;
-  parents: {
-    mother?: string;
-    father?: string;
+enum Directions {
+  TOP,
+  RIGHT,
+  LEFT,
+  BOTTOM
+}
+
+enum TimingFunc {
+  EASE = 'ease', EASE_IN = 'ease-in', LINEAR = 'linear'
+}
+
+function frame(elem: string, dir: Directions, tFunc: TimingFunc): void {
+  if (dir === Directions.RIGHT) {
+    console.log(tFunc)
   }
 }
 
-const user: User = {
-  parents: {},
-  addr: undefined,
-  login: 'first',
-  password: 'qwerty',
-  age: 50
-}
-
-// const basicPorts: readonly number[] = [3000, 3001, 5555];
-
+frame('id', Directions.RIGHT, TimingFunc.LINEAR)

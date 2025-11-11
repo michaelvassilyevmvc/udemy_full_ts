@@ -1,18 +1,24 @@
-enum Directions {
-  TOP,
-  RIGHT,
-  LEFT,
-  BOTTOM
+function fetchData(data: unknown): void{
+  if (typeof data === 'string') {
+    console.log(data.toLowerCase())
+  }
+
 }
 
-enum TimingFunc {
-  EASE = 'ease', EASE_IN = 'ease-in', LINEAR = 'linear'
+const userData = '{"isBirthdayData": true, "ageData": 40, "userNameData":"John"}';
+
+function safeParse(s: string): unknown {
+  return JSON.parse(s);
 }
 
-function frame(elem: string, dir: Directions, tFunc: TimingFunc): void {
-  if (dir === Directions.RIGHT) {
-    console.log(tFunc)
+const data = safeParse(userData);
+
+function transferData(d: unknown): void {
+  if(typeof d === 'string') {
+    console.log(d.toLowerCase())
+  } else if (typeof d === 'object' && d) {
+    console.log(data);
+  } else {
+    console.error('Some error');
   }
 }
-
-frame('id', Directions.RIGHT, TimingFunc.LINEAR)

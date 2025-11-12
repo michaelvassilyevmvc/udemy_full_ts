@@ -1,20 +1,19 @@
-const dataFromControl = {
-  water: 200,
-  el: 350
+const fetchData = (url: string, method: "GET" | "POST"): void => {
+  console.log(method);
 }
 
-function checkReadings(data: typeof dataFromControl): boolean {
-  const dataFromUser = {
-    water: 200,
-    el: 350
-  }
-
-  if(data.el === dataFromUser.el && data.water === dataFromUser.water){
-    return true;
-  } else {
-    return false;
-  }
+const reqOptions = {
+  url: 'https://someurl.com',
+  method: 'GET'
 }
 
-const PI = 3.14;
-let PIClone: typeof PI
+fetchData('qqq', 'GET');
+fetchData(reqOptions.url, <"GET">reqOptions.method);
+
+
+const box = document.querySelector('.box') as HTMLElement;
+const input = <HTMLInputElement>document.querySelector('input');
+
+const someNumber:number = +input.value;
+console.log(someNumber.toFixed());
+

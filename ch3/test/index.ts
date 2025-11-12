@@ -1,68 +1,15 @@
-function isNumber(n: unknown): n is number {
-  return typeof n === 'number';
+const box = document.querySelector('.box') as HTMLElement;
+const input = document.querySelector('input') as HTMLInputElement;
+const link = document.querySelector('a') as HTMLAnchorElement;
+const p = document.querySelector('p') as HTMLParagraphElement;
+const links = document.querySelectorAll('.a');
+
+
+if (link) {
+  link.href = "dkdkdkdk"
 }
 
-interface Car {
-  name: 'car';
-  engine: string;
-  wheels: {
-    number: number;
-    type: string;
-  };
-}
-
-interface Ship {
-  name: 'ship';
-  engine: string;
-  sail: string;
-}
-
-interface Airplane {
-  name: 'airplane';
-  engine: string;
-  wings: string;
-}
-
-interface ComplexVehicle {
-  name: "car" | "ship" | "airplane";
-  engine: string;
-  wheels?: number;
-  sail?: string;
-  wings?: string;
-}
-
-type  Vehicle = Car | Ship | Airplane;
-
-const car: ComplexVehicle = {
-  name: 'car',
-  engine: 'V8'
-}
-
-function repairVehicle(vehicle: ComplexVehicle) {
-
-  switch (vehicle.name) {
-    case 'car':
-      console.log(vehicle.wheels);
-      break;
-    case 'ship':
-      console.log(vehicle.sail);
-      break;
-    case 'airplane':
-      console.log(vehicle.wings);
-      break;
-    default:
-      // const smth: never = vehicle;
-      console.log('Ouuuups!')
-  }
-
-}
-
-repairVehicle(car);
-
-function isCar(car: Vehicle): car is Car {
-  return (car as Car).wheels.number !== undefined;
-}
-
-function isShip(ship: Vehicle): ship is Ship {
-  return "sail" in ship;
-}
+const elem = document.createElement('a');
+link?.addEventListener('click', (e) => {
+  e.preventDefault();
+})

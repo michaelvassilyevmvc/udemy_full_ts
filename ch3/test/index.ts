@@ -1,19 +1,25 @@
-const fetchData = (url: string, method: "GET" | "POST"): void => {
-  console.log(method);
+const department: Department = {
+  name: 'web-dev',
+  budget: 50000
 }
 
-const reqOptions = {
-  url: 'https://someurl.com',
-  method: 'GET'
+interface Department {
+  name: string,
+  budget: number
 }
 
-fetchData('qqq', 'GET');
-fetchData(reqOptions.url, <"GET">reqOptions.method);
+interface Project {
+  name: string,
+  projectBudget: number
+}
 
 
-const box = document.querySelector('.box') as HTMLElement;
-const input = <HTMLInputElement>document.querySelector('input');
 
-const someNumber:number = +input.value;
-console.log(someNumber.toFixed());
+function transformDepartment(department: Department, amount: number): Project {
+  return {
+    name: department.name,
+    projectBudget: amount
+  }
+}
 
+const mainProject: Project = transformDepartment(department, 4000);

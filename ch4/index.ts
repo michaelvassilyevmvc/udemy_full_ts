@@ -1,28 +1,29 @@
-function processingData<T>(data: T): T {
+function processingData<T, S>(data: T[], options: S): string {
+  data.length;
+
+  switch (typeof data) {
+
+    case "number":
+      return `${data}, speed: ${options}`;
+    case "string":
+      return `${data}, speed: ${options}`;
+    default:
+      return 'Not valid';
+  }
+}
+
+// let res1 = processingData(1, 'fast');
+// let res2 = processingData("1", 29);
+const res3 = processingData<number, string>([3], 'boom');
+
+function processing<T>(data: T):T {
   return data;
 }
 
-let res1 = processingData(1);
-let res2 = processingData("1");
-const res3 = processingData<number>(3);
-
-interface PrintUK {
-  design: number;
+interface DataSaver{
+  processing: <T>(data:T) => T
 }
 
-interface PrintES {
-  design: string;
+const saver: DataSaver = {
+  processing
 }
-
-interface Print<T> {
-  design: T;
-}
-
-const somePrint: Print<string> = {
-  design: ""
-}
-
-const someOtherPrint: Print<number> =
-    {
-      design: 0
-    }

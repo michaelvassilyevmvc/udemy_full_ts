@@ -1,7 +1,19 @@
 interface ICompany {
   name: string;
   debts: number;
+  departments: Department;
+  management: {
+    owner: string
+  }
 }
+
+interface Department {
+  [key: string]: string;
+}
+
+type CompanyDebtsType = ICompany['debts'];
+type CompanyOwnerType = ICompany['management']['owner'];
+type CompanyDepartmentsType = ICompany['departments'];
 
 type CompanyKeys = keyof ICompany;
 
@@ -24,7 +36,14 @@ printDebts(hh, 'name','debts');
 
 const google = {
   name: 'Google',
-  open: true
+  open: true,
+
+  departments:{
+    sales: 'sales',
+  },
+  management:{
+    owner: "John"
+  }
 }
 
 printDebts(google, 'name','open')
